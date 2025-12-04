@@ -1,0 +1,205 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+
+.badges-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  padding-bottom: 100px;
+  position: relative;
+  overflow-x: hidden;
+  background-color: #fdfdfd; /* Garante fundo branco se não tiver */
+}
+
+/* --- Cabeçalho Ajustado --- */
+.page-header {
+  font-family: 'Poppins', sans-serif;
+  box-shadow: 0 4px 15px rgba(123, 97, 255, 0.1); /* Suavizei levemente a sombra */
+  color: #9F8BFF;
+  margin-bottom: 20px;
+  padding: 15px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: white; /* Adicionado para garantir leitura sobre o container */
+}
+
+.page-title {
+  font-size: 1.5rem; /* Ajuste leve para mobile */
+  font-weight: 600;
+  margin: 0;
+}
+
+.page-title span {
+  font-weight: 300;
+  opacity: 0.9;
+}
+
+/* Botão do Menu no Header */
+.btn-icon {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icon-lista {
+  width: 28px;
+  height: 28px;
+  transition: transform 0.2s;
+}
+
+.btn-icon:hover .icon-lista {
+  transform: scale(1.1);
+}
+
+/* --- Grid de Conquistas --- */
+.badges-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* Força 2 colunas no mobile */
+  gap: 15px;
+  padding: 0 20px;
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* --- Card da Conquista --- */
+.badge-card {
+  background: white;
+  border-radius: 20px;
+  padding: 20px 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(90, 75, 143, 0.1);
+  transition: transform 0.2s, box-shadow 0.2s;
+  position: relative;
+  overflow: hidden;
+}
+
+.badge-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 15px rgba(123, 97, 255, 0.2);
+}
+
+.badge-card.unlocked {
+  border: 1px solid rgba(0,0,0,0.05);
+}
+
+.badge-card.locked {
+  background-color: #f5f5f5;
+  opacity: 0.8;
+  filter: grayscale(1); /* Deixa preto e branco se bloqueado */
+}
+
+.badge-icon {
+  font-size: 2rem;
+  background: #fdfdfd;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  margin-bottom: 10px;
+  box-shadow: inset 0 0 10px rgba(123, 97, 255, 0.1);
+}
+
+.badge-card.unlocked .badge-icon {
+  background: linear-gradient(135deg, #e0d9ff 0%, #ffffff 100%);
+}
+
+.badge-name {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  font-size: 0.85rem;
+  color: #5a4b8f;
+  margin-bottom: 5px;
+}
+
+.badge-desc {
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.7rem;
+  color: #888;
+  line-height: 1.2;
+}
+
+/* ============================= */
+/* MENU LATERAL (Configuração)   */
+/* ============================= */
+
+.overlay {
+  position: fixed;
+  top: 0; left: 0; width: 100%; height: 100%;
+  background: rgba(0,0,0,0.45);
+  opacity: 0; visibility: hidden;
+  transition: opacity 0.3s ease;
+  z-index: 998;
+}
+
+.overlay.show { opacity: 1; visibility: visible; }
+
+.side-menu {
+  position: fixed;
+  top: 0;
+  right: -270px; /* Escondido à direita */
+  width: 260px;
+  height: 100%;
+  background: #ffffff;
+  padding: 25px 20px;
+  box-shadow: -4px 0 10px rgba(0,0,0,0.1);
+  transition: right 0.35s ease;
+  z-index: 999;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+}
+
+.side-menu.open {
+  right: 0; /* Aparece na tela */
+}
+
+.side-title {
+  font-size: 22px;
+  font-weight: bold;
+  color: #6C5CE7;
+  margin-bottom: 10px;
+  border-bottom: 2px solid #f0f0f0;
+  padding-bottom: 10px;
+}
+
+.side-item {
+  padding: 15px;
+  background-color: #fff;
+  border: none;
+  font-size: 1rem;
+  cursor: pointer;
+  text-align: left;
+  transition: 0.2s ease;
+  font-weight: 500;
+  color: #555;
+  display: flex;
+  align-items: center;
+  gap: 15px; /* Espaço entre ícone e texto */
+  border-bottom: 1px solid #f9f9f9;
+}
+
+.side-item:hover {
+  background-color: #f8f8ff;
+  transform: translateX(-5px); /* Move levemente para a esquerda */
+  color: #6C5CE7;
+}
+
+/* === NOVO: Ajuste para os ícones PNG dentro do menu === */
+.icon-side {
+    width: 24px;
+    height: 24px;
+    object-fit: contain;
+}

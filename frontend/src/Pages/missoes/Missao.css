@@ -1,0 +1,159 @@
+/* Missao.css */
+.missao-container {
+  min-height: 100vh;
+  background-color: #f8f9fa; /* Fundo cinza claro igual da imagem */
+  padding: 20px;
+  font-family: 'Segoe UI', sans-serif;
+  padding-bottom: 80px;
+}
+
+/* --- Cabeçalho --- */
+.header-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+/* Centralizando o título visualmente */
+.page-title {
+  color: #6C5CE7;
+  font-size: 2rem;
+  font-weight: 800;
+  margin: 0;
+  text-align: center;
+  flex: 1; /* Ocupa o espaço para centralizar */
+}
+
+/* Ajuste para o botão do menu não empurrar o título */
+.header-top > :first-child {
+  position: absolute;
+  left: 20px;
+  z-index: 10;
+}
+
+.missao-subtitle {
+  color: #6C5CE7;
+  text-align: center;
+  font-size: 0.95rem;
+  margin-bottom: 30px;
+  max-width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.4;
+}
+
+/* --- Lista de Missões --- */
+.missao-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Card Padrão */
+.missao-card {
+  background-color: white;
+  border-radius: 20px;
+  padding: 20px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  position: relative;
+  transition: transform 0.2s;
+}
+
+.missao-card:hover {
+  background-color: rgb(241, 241, 241);
+  border-radius: 20px;
+  padding: 20px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+  transform: translateY(-3px);
+  border: #FF7675 1px solid;
+
+}
+
+.missao-card:active {
+  transform: scale(0.99);
+}
+
+/* Header do Card (Título + XP) */
+.missao-header-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.missao-titulo {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #555;
+  margin: 0;
+}
+
+/* Badge de XP (Roxo) */
+.missao-recompensa {
+  background-color: #6C5CE7;
+  color: white;
+  padding: 5px 15px;
+  border-radius: 12px;
+  font-weight: bold;
+  font-size: 0.9rem;
+  white-space: nowrap;
+}
+
+/* Descrição */
+.missao-desc-item {
+  font-size: 0.9rem;
+  color: #888;
+  margin: 0;
+}
+
+/* --- Barra de Progresso --- */
+.progress-container {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 5px;
+}
+
+.progress-bar {
+  width: 100%;
+  height: 10px;
+  background-color: #E0E0E0; /* Cinza claro fundo */
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  border-radius: 10px;
+  transition: width 0.5s ease-in-out;
+}
+
+/* Cores das barras baseadas no status */
+/* Em andamento (Rosa) */
+.progress-fill.pink { background-color: #FF7675; }
+/* Concluído (Roxo) */
+.progress-fill.purple { background-color: #6C5CE7; }
+/* Não iniciado (Invisível/Vazio) */
+.progress-fill.empty { width: 0; }
+
+
+/* Status Text (Abaixo da barra) */
+.status-text {
+  font-size: 0.85rem;
+  color: #777;
+}
+
+/* --- Card Concluído (Estilo Especial) --- */
+/* Fundo rosa claro e borda rosa */
+.missao-card.done {
+  background-color: #f0ecfc; 
+  border: 1px solid #7e75ff;
+}
+
+.missao-card.done:hover {
+  background-color: #dedaea;
+  border: 1px solid #7e75ff;
+}

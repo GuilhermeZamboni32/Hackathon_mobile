@@ -1,0 +1,210 @@
+/* Dashboard.css */
+.dashboard-container {
+  min-height: 100vh;
+  background-color: #f8f9fa;
+  font-family: 'Segoe UI', sans-serif;
+  padding-bottom: 80px; /* Espaço para scroll */
+}
+
+/* Header */
+.top-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background-color: white;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.app-logo {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: #6C5CE7;
+  margin: 0;
+}
+
+.profile-pic-placeholder {
+  width: 40px;
+  height: 40px;
+  background-color: #e0e0e0;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  color: #666;
+  font-size: 0.8rem;
+  cursor: pointer;
+}
+
+/* Scroll Content */
+.scroll-content {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+/* Animações */
+.fade-in { animation: fadeIn 0.5s ease-out forwards; opacity: 0; }
+.delay-1 { animation-delay: 0.1s; }
+.delay-2 { animation-delay: 0.2s; }
+.delay-3 { animation-delay: 0.3s; }
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* 1. Level Card */
+.level-card {
+  background: linear-gradient(135deg, #6C5CE7 0%, #FF6584 100%);
+  border-radius: 20px;
+  padding: 20px;
+  color: white;
+  box-shadow: 0 10px 20px rgba(108, 92, 231, 0.3);
+}
+
+.level-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 20px;
+}
+
+.level-badge {
+  background: rgba(255,255,255,0.2);
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.level-title {
+  font-size: 1.8rem;
+  margin: 10px 0 0 0;
+}
+
+.streak-badge {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  background: rgba(0,0,0,0.2);
+  padding: 6px 12px;
+  border-radius: 12px;
+  font-weight: bold;
+}
+
+.xp-labels {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.85rem;
+  margin-bottom: 8px;
+  opacity: 0.9;
+}
+
+.progress-bar-bg {
+  width: 100%;
+  height: 8px;
+  background: rgba(0,0,0,0.2);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.progress-bar-fill {
+  height: 100%;
+  background-color: #ffffff; /* Ciano para destaque */
+  border-radius: 10px;
+}
+
+/* Sections Global */
+.section-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 15px;
+}
+
+.section-header h3 {
+  margin: 0;
+  font-size: 1.1rem;
+  color: #2d3436;
+}
+
+/* Wrapper para controlar tamanho das imagens IconsBranca nos headers */
+.section-icon-wrapper img {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+  display: block;
+}
+
+/* (Removido: 2. Rotina Scroll Horizontal) */
+
+/* 3. Missões (Agora renomeado ou apenas mantido) */
+.missions-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.mission-item {
+  background: white;
+  padding: 15px;
+  border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.03);
+}
+
+.mission-info {
+  display: flex;
+  justify-content: space-between;
+  font-weight: 600;
+  color: #2d3436;
+}
+
+.mission-title.completed { text-decoration: line-through; color: #b2bec3; }
+.mission-xp { color: #FF6584; font-weight: bold; }
+
+.mini-progress-bg {
+  width: 100%;
+  height: 6px;
+  background-color: #f1f2f6;
+  border-radius: 10px;
+}
+.mini-progress-fill {
+  height: 100%;
+  background-color: #6C5CE7;
+  border-radius: 10px;
+}
+
+/* (Removido: 4. Conquistas Grid) */
+
+/* 5. Ranking Preview */
+.ranking-item {
+  display: flex;
+  align-items: center;
+  background: white;
+  padding: 12px 15px;
+  border-radius: 12px;
+  margin-bottom: 10px;
+  gap: 15px;
+}
+.ranking-item.user-rank { border: 2px solid #6C5CE7; }
+
+.rank-pos { font-weight: bold; color: #636e72; width: 20px; }
+.rank-avatar { 
+  width: 35px; height: 35px; 
+  background: #dfe6e9; 
+  border-radius: 50%; 
+  display: flex; align-items: center; justify-content: center;
+  font-size: 0.8rem; font-weight: bold;
+}
+.rank-avatar.me { background: #6C5CE7; color: white; }
+.rank-name { flex: 1; font-weight: 600; }
+.rank-pts { color: #00b894; font-weight: bold; font-size: 0.9rem; }

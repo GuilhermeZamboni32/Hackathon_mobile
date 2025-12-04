@@ -1,0 +1,149 @@
+/* Importando fontes: Uma cursiva para o Logo e uma moderna para o texto */
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;600&display=swap');
+
+/* Reset básico */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Container Principal com o Gradiente */
+.home-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 100vh;
+  width: 100%;
+  /* O gradiente roxo que desvanece para branco */
+  background: linear-gradient(180deg, #9F8BFF 0%, #ffffff 45%);
+  font-family: 'Poppins', sans-serif;
+  padding: 20px;
+  color: #555;
+}
+
+/* --- Cabeçalho e Logo --- */
+.home-header {
+  text-align: center;
+  padding-top: 40px;
+  flex: 0 0 auto;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.logo_P {
+  width: 90px;
+  height: 70px;
+}
+
+.logo-script {
+  font-family: 'Great Vibes', cursive; /* Fonte manuscrita */
+  font-size: 4rem;
+  color: #fff;
+  font-weight: 400;
+  line-height: 1;
+}
+
+/* --- Conteúdo Principal (Slider) --- */
+.home-main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+}
+
+.illustration-container {
+  width: 100%;
+    /* 🔑 ESSENCIAL: Defina uma altura fixa para este container. 
+       Isso garante que o espaço reservado para a imagem seja sempre o mesmo. */
+    height: 250px; /* Exemplo: Ajuste conforme a altura máxima desejada para suas SVGs */
+    
+    /* Garante que a imagem se centralize dentro deste espaço */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.slide-image {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.slide-text {
+  font-size: 1.1rem;
+  color: #8c8c8c; /* Cinza suave */
+  max-width: 280px;
+  margin: 0 auto 30px auto;
+  line-height: 1.5;
+}
+
+/* Animação suave ao trocar slide */
+.fade-in {
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* --- Bolinhas de Paginação --- */
+.pagination-dots {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  background-color: #d1d1d1;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.dot.active {
+  background-color: #7B61FF; /* Roxo ativo */
+  transform: scale(1.2);
+}
+
+/* --- Rodapé e Botão --- */
+.home-footer {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding-bottom: 30px;
+}
+
+.btn-entrar {
+  background-color: #6c5ce7; /* Cor base do botão */
+  background: linear-gradient(90deg, #7B61FF 0%, #6c5ce7 100%);
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1.2rem;
+  padding: 15px 0;
+  width: 90%; /* Botão largo como na imagem */
+  max-width: 350px;
+  border-radius: 50px; /* Bordas bem arredondadas */
+  text-align: center;
+  box-shadow: 0 4px 15px rgba(108, 92, 231, 0.4); /* Sombra suave */
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.btn-entrar:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(108, 92, 231, 0.6);
+}
